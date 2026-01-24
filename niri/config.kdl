@@ -57,7 +57,6 @@ recent-windows {
     }
 }
 
-window-rule
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://yalter.github.io/niri/Configuration:-Input
@@ -372,6 +371,7 @@ debug {
     honor-xdg-activation-with-invalid-serial
 }
 overview {
+    zoom 0.30
     backdrop-color "transparent"
     // workspace-shadow {
     //     off
