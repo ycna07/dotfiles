@@ -1,0 +1,12 @@
+workspace "dynamic"{
+      open-on-output "DP-5"
+}
+
+window-rule{
+  match app-id="QQ"
+  open-on-workspace "dynamic"
+}
+window-rule{
+  match app-id=r#"^org\.telegram\.desktop$"#
+  open-on-workspace "dynamic"
+}
