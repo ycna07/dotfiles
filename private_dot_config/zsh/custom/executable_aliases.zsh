@@ -1,6 +1,7 @@
 alias vi=nvim
 alias ch=chezmoi
 alias che=chezmoi edit
+alias cd=z
 
 # 交互式终端中用 bat 代替 cat
 if [ -t 1 ]; then
