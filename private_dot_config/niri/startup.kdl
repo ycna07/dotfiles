@@ -1,0 +1,2 @@
+// spawn-at-startup-sh "/home/ycna/.config/niri/scripts/"
+spawn-at-startup "niri-float-sticky"

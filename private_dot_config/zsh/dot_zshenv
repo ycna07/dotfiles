@@ -1,0 +1,41 @@
+#!/usr/bin/env zsh
+
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+
+# Path to your Oh My Zsh installation.
+export ZSH="$ZDOTDIR/.oh-my-zsh"
+export ZSH_CUSTOM="$ZDOTDIR/custom"
+export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8 
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export VISUAL='vim'
+  export EDITOR='vim'
+else
+  export VISUAL='nvim'
+  export EDITOR='nvim'
+fi
+
+# dotnet env
+export PATH="$PATH:$HOME/.dotnet/tools"
+# go env
+# electron mirror
+export ELECTRON_MIRROR="https://npmmirror.com/mirrors/electron/"
+#nvm
+# source /usr/share/nvm/init-nvm.sh
+# fvm and flutter
+export FVM_FLUTTER_URL="https://mirrors.tuna.tsinghua.edu.cn/git/flutter-sdk.git"
+export FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"
+export PATH="$PATH:$HOME/fvm/default/bin"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+# py env
+# export PYENV_ROOT="$HOME/.pyenv"
+# eval "$(pyenv init -)"
+export LIBVIRT_DEFAULT_URI="qemu:///system"
+
