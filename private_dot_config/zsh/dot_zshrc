@@ -27,9 +27,9 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 
 # typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
-zinit ice depth=1 lucid atload'source ~/.p10k.zsh; _p9k_precmd' nocd
+zinit ice depth=1 lucid         #  atload'source ~/.p10k.zsh; _p9k_precmd' nocd
 zinit light romkatv/powerlevel10k
-
+source $ZDOTDIR/.p10k.zsh
 
 zinit wait lucid light-mode for \
   atinit"zicompinit; zicdreplay" \
@@ -45,16 +45,12 @@ zinit wait lucid light-mode for \
   OMZP::colored-man-pages/colored-man-pages.plugin.zsh \
   $ZSH_CUSTOM/functions/bat.zsh
 
-zinit as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
+zinit lucid as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
     atpull'%atclone' pick"direnv" src"zhook.zsh" for \
         direnv/direnv
 
 
-
-
-
-
-zinit ice depth=1
+zinit ice lucid depth=1
 zinit light jeffreytse/zsh-vi-mode
 
 
