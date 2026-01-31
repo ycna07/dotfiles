@@ -1,0 +1,4 @@
+patch:
+    # 设置应用默认中英文模式
+    app_options/kitty:
+        ascii_mode: true
