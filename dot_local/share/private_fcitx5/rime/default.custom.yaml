@@ -4,7 +4,7 @@ patch:
     - {schema: tigress}
     - {schema: PY_c}
     - {schema: wanxiang}
-    # - {schema: rime_ice}
+    - {schema: rime_ice}
   "switcher/hotkeys":  # 将默认的 F4热键 更改为ctrl+`
     - "Control+grave"
     - "Control+F8"
