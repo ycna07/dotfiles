@@ -2,17 +2,17 @@
 My config based on Arch Linux 
 
 ## Software
-Onli daily used software will be included
+Only daily used software will be included
 
 - /usr/bin/sh: `bash`
 - Login Shell: `zsh`
 - Terminal Emulator: `kitty` `neovide`
-- Editor: `vim` `nvim` `code-oss`
+- Editor: `nvim` `emacs`
 - Compositor: `niri`
 - Appearance: `quickshell` `noctlia-shell`
 - File Manager:`yazi`
 - Input Method:`fcitx5` `rime`
-- Browser: `zen-browser`
+- Browser:`Vieb` `zen-browser`
 - Dotfile Manager: `chezmoi`
 - Mail: `neomutt`
 
@@ -25,3 +25,5 @@ Onli daily used software will be included
 [archwiki](https://wiki.archlinux.org/title/Dotfiles)
 [unixchad](https://github.com/gnuunixchad/dotfiles)
 [lilydjwg](https://github.com/lilydjwg/dotconfig)
+
+
