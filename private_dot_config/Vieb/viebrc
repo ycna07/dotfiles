@@ -37,5 +37,10 @@ nmap ? <:help>
 " vim: ft=vim
 
 " UI Settings
+colorscheme catppuccin 
 set guitabbar=never
 set guinavbar=oninput
+set guifontsize=16
+
+" Plugins
+set darkreader true
