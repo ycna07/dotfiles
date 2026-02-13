@@ -15,7 +15,7 @@ Only daily used software will be included
 - Browser:`Vieb` `zen-browser`
 - Dotfile Manager: `chezmoi`
 - Mail: `neomutt`
-
+- GPU Switcher:`EnvyControl`
 
 
 
