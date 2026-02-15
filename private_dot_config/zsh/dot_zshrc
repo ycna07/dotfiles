@@ -27,7 +27,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 
 # typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
-zinit ice depth=1 lucid         #  atload'source ~/.p10k.zsh; _p9k_precmd' nocd
+zinit ice depth=1 lucid         
 zinit light romkatv/powerlevel10k
 source $ZDOTDIR/.p10k.zsh
 
@@ -38,12 +38,18 @@ zinit wait lucid light-mode for \
       zsh-users/zsh-autosuggestions \
   blockf atpull'zinit creinstall -q .' atload'source <(carapace _carapace)'\
       zsh-users/zsh-completions \
-  joshskidmore/zsh-fzf-history-search \
   OMZ::plugins/dirhistory/dirhistory.plugin.zsh \
   OMZ::lib/directories.zsh \
   atload'export LS_COLORS=$(vivid generate dracula)'\
   OMZP::colored-man-pages/colored-man-pages.plugin.zsh \
-  $ZSH_CUSTOM/functions/bat.zsh
+  blockf \
+  $ZSH_CUSTOM/completions/ycna-completions.plugin.zsh 
+
+
+
+zinit ice as"completion" 
+zinit snippet $ZDOTDIR/custom/completions/_chezetc
+
 
 zinit lucid as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
     atpull'%atclone' pick"direnv" src"zhook.zsh" for \
@@ -60,8 +66,12 @@ if [  -f "$HOME/.x-cmd.root/X" ]; then
 else echo "x-cmd NOT installed"
 fi
 
+zinit ice wait lucid 
+zinit snippet  $ZSH_CUSTOM/aliases.zsh  
+zinit ice wait lucid 
+zinit snippet  $ZSH_CUSTOM/functions/fzf-official.zsh 
+ 
 
-source $ZSH_CUSTOM/aliases.zsh
 source $ZSH_CUSTOM/keybinds.zsh
 source $ZSH_CUSTOM/functions/eza.zsh
 source $ZSH_CUSTOM/functions/zoxide.zsh

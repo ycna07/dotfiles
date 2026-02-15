@@ -19,9 +19,13 @@ else
   export EDITOR='nvim'
 fi
 
+# chezetc env
+export PATH="$PATH:$HOME/.chezetc"
+
 # dotnet env
 export PATH="$PATH:$HOME/.dotnet/tools"
 # go env
+export PATH=$PATH:$GOPATH/bin
 # electron mirror
 export ELECTRON_MIRROR="https://npmmirror.com/mirrors/electron/"
 #nvm
@@ -36,3 +40,7 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 # eval "$(pyenv init -)"
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 
+# gpg as ssh-agent
+export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+echo UPDATESTARTUPTTY | gpg-connect-agent 1> /dev/null

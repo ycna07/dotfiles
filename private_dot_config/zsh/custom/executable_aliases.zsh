@@ -1,14 +1,16 @@
 alias vi=nvim
 alias ch=chezmoi
-alias che=chezmoi edit
+alias che=chezetc
 alias cd=z
 
-# 交互式终端中用 bat 代替 cat
-if [ -t 1 ]; then
+alias rime-reconfig='qdbus org.fcitx.Fcitx5 /controller org.fcitx.Fcitx.Controller1.SetConfig "fcitx://config/addon/rime/deploy" ""'
+alias rime-sync='qdbus org.fcitx.Fcitx5 /controller org.fcitx.Fcitx.Controller1.SetConfig "fcitx://config/addon/rime/sync" ""'
 
-  alias cat='bat --paging=never --style=plain'
-
-  fi
+if command -v "bat" &>/dev/null; then
+    #! alias -g -- h='-h 2>&1 | bat --language=help --style=plain --paging=never --color always' # <--- this is discouraged! This conflicts with posix -h test operator
+    alias -g -- --help='--help 2>&1 | bat --language=help --style=plain --paging=never --color always'
+    alias cat='bat --style=plain --paging=never --color auto'
+fi
 
 #yazi
 function y() {
