@@ -16,6 +16,8 @@ Only daily used software will be included
 - Dotfile Manager: `chezmoi`
 - Mail: `neomutt`
 - GPU Switcher:`EnvyControl`
+- FileSystem:`Btrfs` `timeshift`
+
 
 
 
