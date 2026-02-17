@@ -43,4 +43,10 @@ set guinavbar=oninput
 set guifontsize=16
 
 " Plugins
-set darkreader true
+set darkreader=true
+set userscript=true
+
+" Misc
+set vimcommand=nvim
+set translatelang=zh
+set translateurl="http://localhost:5000"
