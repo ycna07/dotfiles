@@ -1,0 +1,14 @@
+ELECTRON_OZONE_PLATFORM_HINT "auto"
+XMODIFIERS "@im=fcitx"
+QT_IM_MODULES "wayland;fcitx"
+GTK_IM_MODULE null
+SDL_IM_MODULE null
+GLFW_IM_MODULE null
+
+//noctalia theme 
+QT_QPA_PLATFORMTHEME "qt6ct"
+QT_QPA_PLATFORMTHEME_QT6 "qt6ct"
+
+//sway-scoll
+CLUTTER_BACKEND=wayland
+XDG_CURRENT_DESKTOP=sway;niri;gnome
