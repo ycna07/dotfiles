@@ -1,0 +1,5 @@
+patch:
+  switches:
+    - name: emoji
+      states: [ 💀, 😄 ]
+      reset: 0
