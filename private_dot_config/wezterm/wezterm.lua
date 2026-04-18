@@ -44,13 +44,15 @@ config.enable_wayland = true
 config.window_background_opacity = 0.7
 -- config.text_background_opacity = 0.7
 
+-- config.freetype_load_target = "Light"
+-- config.freetype_render_target = "Light"
 config.adjust_window_size_when_changing_font_size = false
 config.font_thicken = true
-config.font_thicken_strength = 196
+config.font_thicken_strength = 148
 -- 中英二比一测试
 -- config.font = wez.font("Sarasa Term SC")
 config.font = wez.font("Maple Mono")
-config.font_size = 17
+config.font_size = 18
 config.window_decorations = "NONE"
 config.window_padding = {
 	left = 0,
