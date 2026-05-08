@@ -1,29 +1,35 @@
 layout {
-    background-color "transparent"
 
     focus-ring {
-        active-color   "{{colors.primary.default.hex}}"
-        inactive-color "{{colors.outline.default.hex}}"
-        urgent-color   "{{colors.error.default.hex}}"
+        active-color   "#95d784"
+        inactive-color "#091615"
+        urgent-color   "#ffb4ab"
     }
 
     border {
-        active-color   "{{colors.primary.default.hex}}"
-        inactive-color "{{colors.outline.default.hex}}"
-        urgent-color   "{{colors.error.default.hex}}"
+        active-color   "#95d784"
+        inactive-color "#091615"
+        urgent-color   "#ffb4ab"
     }
 
     shadow {
-        color "{{colors.shadow.default.hex}}70"
+        color "#00000070"
     }
 
     tab-indicator {
-        active-color   "{{colors.primary.default.hex}}"
-        inactive-color "{{colors.outline.default.hex}}"
-        urgent-color   "{{colors.error.default.hex}}"
+        active-color   "#95d784"
+        inactive-color "#15520f"
+        urgent-color   "#ffb4ab"
     }
 
     insert-hint {
-        color "{{colors.primary.default.hex}}80"
+        color "#95d78480"
+    }
+}
+
+recent-windows {
+    highlight {
+        active-color "#95d784"
+        urgent-color "#ffb4ab"
     }
 }
