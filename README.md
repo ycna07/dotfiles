@@ -7,12 +7,12 @@ Only daily used software will be included
 - /usr/bin/sh: `bash`
 - Login Shell: `zsh`
 - Terminal Emulator: `kitty` `neovide`
-- Editor: `nvim` `emacs`
+- Editor: `nvim` `zed`
 - Compositor: `niri`
-- Appearance: `quickshell` `noctlia-shell`
+- Appearance: `noctlia-shell`
 - File Manager:`yazi`
 - Input Method:`fcitx5` `rime`
-- Browser:`Vieb` `zen-browser`
+- Browser:`zen-browser`
 - Dotfile Manager: `chezmoi`
 - Mail: `neomutt`
 - GPU Switcher:`EnvyControl`
