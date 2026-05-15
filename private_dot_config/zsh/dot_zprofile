@@ -8,3 +8,6 @@ SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
 # fi
 
 
+# go env
+export GOPATH="$HOME/.local/share/go"
+export PATH=$PATH:$GOPATH/bin
