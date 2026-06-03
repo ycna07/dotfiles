@@ -45,6 +45,7 @@ export LIBVIRT_DEFAULT_URI="qemu:///system"
 
 export QML_IMPORT_PATH="/usr/lib/qt6/qml"
 # gpg as ssh-agent
+<<<<<<< HEAD
 # export GPG_TTY=$(tty)
 # export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 # echo UPDATESTARTUPTTY | gpg-connect-agent 1> /dev/null
