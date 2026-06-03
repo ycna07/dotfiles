@@ -1,3 +1,4 @@
+
 # Dotfiles
 My config based on Arch Linux 
 
@@ -7,7 +8,7 @@ Only daily used software will be included
 - /usr/bin/sh: `bash`
 - Login Shell: `zsh`
 - Terminal Emulator: `kitty` `neovide`
-- Editor: `nvim` `emacs`
+- Editor: `nvim` `zed`
 - Compositor: `niri`
 - Appearance: `quickshell` `noctlia-shell`
 - File Manager:`yazi`
