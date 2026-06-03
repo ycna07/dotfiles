@@ -1,7 +1,8 @@
+alias op=xdg-open
 alias vi=nvim
+alias vid=neovide
 alias ch=chezmoi
 alias che=chezetc
-alias cd=z
 
 alias rime-reconfig='qdbus org.fcitx.Fcitx5 /controller org.fcitx.Fcitx.Controller1.SetConfig "fcitx://config/addon/rime/deploy" ""'
 alias rime-sync='qdbus org.fcitx.Fcitx5 /controller org.fcitx.Fcitx.Controller1.SetConfig "fcitx://config/addon/rime/sync" ""'
@@ -21,3 +22,14 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+#WARN:!!! overwrite alias !!!
+alias nslookup="dig +short"
+alias nsq="resolvectl query"
+alias bw=rbw
+alias cd=z
+
+# 检测是否为 kitty 终端
+if [[ -n "$KITTY_WINDOW_ID" ]] || [[ "$TERM" == xterm-kitty ]]; then
+    # 覆盖 ssh 命令
+    alias ssh='kitten ssh'
+fi
