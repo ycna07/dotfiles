@@ -8,7 +8,6 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 export LANG=en_US.UTF-8 
 export LANGUAGE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -25,6 +24,10 @@ export PATH="$PATH:$HOME/.chezetc"
 # dotnet env
 export PATH="$PATH:$HOME/.dotnet/tools"
 # go env
+export GOPATH="$HOME/.local/share/go"
+# export GOBIN=$HOME/.local/share/go/bin
+# cargo 
+export PATH="$HOME/.cargo/bin:$PATH"
 export PATH=$PATH:$GOPATH/bin
 # electron mirror
 export ELECTRON_MIRROR="https://npmmirror.com/mirrors/electron/"
@@ -40,7 +43,16 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 # eval "$(pyenv init -)"
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 
+export QML_IMPORT_PATH="/usr/lib/qt6/qml"
 # gpg as ssh-agent
-export GPG_TTY=$(tty)
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-echo UPDATESTARTUPTTY | gpg-connect-agent 1> /dev/null
+# export GPG_TTY=$(tty)
+# export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+# echo UPDATESTARTUPTTY | gpg-connect-agent 1> /dev/null
+
+# bitwarden as ssh-agent
+# export SSH_AUTH_SOCK=$HOME/.bitwarden-ssh-agent.sock
+# rbw as ssh-agent
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/rbw/ssh-agent-socket"
+
+# Nvidia hardware acceleration
+# export VDPAU_DRIVER=nvidia
