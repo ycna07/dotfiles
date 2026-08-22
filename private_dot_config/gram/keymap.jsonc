@@ -1,0 +1,139 @@
+// Gram keymap
+//
+// For information on binding keys, see the Gram
+// documentation: gram://docs/key-bindings
+//
+// To see the default key bindings run `gram: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Welcome||Editor && vim_mode == normal && vim_operator == none && !VimWaiting",
+    "bindings": {
+      "space e": "project_panel::Toggle",
+      "space c": "pane::CloseActiveItem",
+      "space q": "pane::CloseActiveItem",
+      "space w": "workspace::Save",
+      "space t": "workspace::ToggleBottomDock",
+      "space g g": "git_panel::Toggle",
+      "space g b": "editor::ToggleGitBlameInline",
+      "space /": [
+        "editor::ToggleComments",
+        {
+          "advance_downwards": false,
+        },
+      ],
+      "space l r": "editor::FindAllReferences",
+      "space l s": "outline::Toggle",
+      "space l D": "diagnostics::Toggle",
+      "space l w": "diagnostics::ToggleWarnings",
+      "space l g": "lsp::OpenLanguageServerConfig",
+      "space f f": "file_finder::Toggle",
+      "space f k": "gram::OpenKeymapFile",
+      "space f K": "gram::OpenKeymap",
+      "space f s": "gram::OpenSettingsFile",
+      "space f S": "gram::OpenSettings",
+      "space f t": "theme_selector::Toggle",
+      "space f p": "projects::OpenRecent",
+      "space u h": "editor::ToggleInlayHints",
+      "space u T": "gram::ToggleTitleBar",
+    },
+  },
+  {
+    "context": "Editor&&vim_mode==visual",
+    "bindings": {
+      "space /": [
+        "editor::ToggleComments",
+        {
+          "advance_downwards": false,
+        },
+      ]
+    }
+  },
+  {
+    "context": "(ProjectPanel && not_editing)||EmptyPane",
+    "bindings": {
+      "space e": "project_panel::Toggle",
+    }
+  },
+  {
+    "context": "(GitPanel && not_editing)||EmptyPane",
+    "bindings": {
+      "space g g": "git_panel::Toggle"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-'": "terminal_panel::Toggle",
+      "ctrl-q": "pane::CloseActiveItem",
+    },
+  },
+  {
+    "bindings": {
+      "left": "editor::MoveLeft",
+      "right": "editor::MoveRight",
+      "down": "editor::MoveDown",
+      "up": "editor::MoveUp",
+      "ctrl--": "gram::DecreaseBufferFontSize",
+      "ctrl-=": "gram::IncreaseBufferFontSize",
+      "enter": "editor::ConfirmCompletion",
+      "ctrl-shift-c": "editor::Copy",
+      "ctrl-shift-v": "editor::Paste",
+    },
+  },
+  {
+    "context": "(((Editor && in_snippet) && has_next_tabstop) && !showing_completions)",
+    "bindings": {
+      "tab": "editor::NextSnippetTabstop",
+    },
+  },
+  {
+    "context": "(Editor && (showing_code_actions || showing_completions))",
+    "bindings": {
+      "tab": "editor::ContextMenuNext",
+      "shift-tab": "editor::ContextMenuPrevious",
+    },
+  },
+  {
+    "context": "Picker > Editor",
+    "bindings": {
+      "tab": "menu::SelectNext",
+      "shift-tab": "menu::SelectPrevious"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-shift-tab": [
+        "tab_switcher::Toggle",
+        {
+          "select_last": true
+        }
+      ]
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-tab": "tab_switcher::Toggle"
+    }
+  },
+  {
+    "context": "(ProjectPanel && not_editing)",
+    "bindings": {
+      "a": "project_panel::NewFile"
+    }
+  },
+  {
+    "context": "(ProjectPanel && not_editing)",
+    "bindings": {
+      "d": "project_panel::Delete"
+    }
+  },
+  {
+    "context": "(ProjectPanel && not_editing)",
+    "bindings": {
+      "d": null
+    }
+  }
+]
