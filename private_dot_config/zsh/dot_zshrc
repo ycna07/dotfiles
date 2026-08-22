@@ -1,7 +1,4 @@
-# 设置历史文件路径
-HISTFILE=$ZDOTDIR/.zsh_history  # 这里可以替换为你想要的路径，如 ~/Documents/zsh_history
-
-# 可选：设置历史记录相关的其他参数
+HISTFILE=$ZDOTDIR/.zsh_history  # 设置历史文件路径
 HISTSIZE=20000          # 内存中保存的历史命令数量
 SAVEHIST=20000          # 保存到历史文件的命令数量
 setopt appendhistory    # 退出时追加历史，而不是覆盖
@@ -9,16 +6,19 @@ setopt sharehistory     # 多个终端共享历史记录
 setopt HIST_SAVE_NO_DUPS     # 写入历史文件时也去重
 setopt HIST_EXPIRE_DUPS_FIRST # 当历史满时，优先删除重复项
 setopt HIST_REDUCE_BLANKS    # 忽略只包含空格的命令
-#开启拓展匹配
-setopt extended_glob
+setopt extended_glob #开启拓展匹配
 
 # ZVM开启系统剪切板
 ZVM_SYSTEM_CLIPBOARD_ENABLED=true
-#增加carapace补全数量
+# 增加carapace补全数量
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
 
+zstyle ':completion:*' menu select
 
-zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -26,45 +26,23 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 
 
-# typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 zinit ice depth=1 lucid         
 zinit light romkatv/powerlevel10k
 source $ZDOTDIR/.p10k.zsh
 
 zinit wait lucid light-mode for \
-  atinit"zicompinit; zicdreplay" \
-      zdharma-continuum/fast-syntax-highlighting \
-  atload'_zsh_autosuggest_start' \
-      zsh-users/zsh-autosuggestions \
-  blockf atpull'zinit creinstall -q .' atload'source <(carapace _carapace)'\
-      zsh-users/zsh-completions \
   OMZ::plugins/dirhistory/dirhistory.plugin.zsh \
   OMZ::lib/directories.zsh \
   atload'export LS_COLORS=$(vivid generate ansi)'\
-  OMZP::colored-man-pages/colored-man-pages.plugin.zsh \
-  blockf \
-  $ZSH_CUSTOM/completions/ycna-completions.plugin.zsh 
+  OMZP::colored-man-pages/colored-man-pages.plugin.zsh 
 
 
 
-zinit ice as"completion" 
-zinit snippet $ZDOTDIR/custom/completions/_chezetc
-
-
-zinit lucid as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
-    atpull'%atclone' pick"direnv" src"zhook.zsh" for \
-        direnv/direnv
-
-
+if [[ -n "$NVIM" ]]; then
+else
 zinit ice lucid depth=1
 zinit light jeffreytse/zsh-vi-mode
-
-
-# if [  -f "$HOME/.x-cmd.root/X" ]; then 
-#   zinit ice wait"0" lucid
-#   zinit snippet  "$HOME/.x-cmd.root/X"
-# else echo "x-cmd NOT installed"
-# fi
+fi
 
 zinit ice wait lucid 
 zinit snippet  $ZSH_CUSTOM/functions/fzf-official.zsh 
@@ -74,10 +52,3 @@ source $ZSH_CUSTOM/keybinds.zsh
 source $ZSH_CUSTOM/functions/eza.zsh
 source $ZSH_CUSTOM/functions/zoxide.zsh
 
-
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-
-# [ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" # boot up x-cmd.

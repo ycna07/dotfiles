@@ -3,6 +3,7 @@ alias vi=nvim
 alias vid=neovide
 alias ch=chezmoi
 alias che=chezetc
+alias zed=zeditor
 
 alias rime-reconfig='qdbus org.fcitx.Fcitx5 /controller org.fcitx.Fcitx.Controller1.SetConfig "fcitx://config/addon/rime/deploy" ""'
 alias rime-sync='qdbus org.fcitx.Fcitx5 /controller org.fcitx.Fcitx.Controller1.SetConfig "fcitx://config/addon/rime/sync" ""'

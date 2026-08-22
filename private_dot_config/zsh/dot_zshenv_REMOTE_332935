@@ -18,9 +18,6 @@ else
   export EDITOR='nvim'
 fi
 
-# enable mouse control for less
-# export LESS='--mouse'
-
 # chezetc env
 export PATH="$PATH:$HOME/.chezetc"
 
@@ -37,8 +34,8 @@ export ELECTRON_MIRROR="https://npmmirror.com/mirrors/electron/"
 #nvm
 # source /usr/share/nvm/init-nvm.sh
 # fvm and flutter
-export FVM_FLUTTER_URL="https://mirrors.cernet.edu.cn/flutter-sdk.git"
-export FLUTTER_STORAGE_BASE_URL="https://mirrors.cernet.edu.cn/flutter"
+export FVM_FLUTTER_URL="https://mirrors.tuna.tsinghua.edu.cn/git/flutter-sdk.git"
+export FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"
 export PATH="$PATH:$HOME/fvm/default/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 # py env
@@ -46,21 +43,10 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 # eval "$(pyenv init -)"
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 
-export QML_IMPORT_PATH="/usr/lib/qt6/qml"
 # gpg as ssh-agent
-# export GPG_TTY=$(tty)
-# export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-# echo UPDATESTARTUPTTY | gpg-connect-agent 1> /dev/null
-
-# bitwarden as ssh-agent
-# export SSH_AUTH_SOCK=$HOME/.bitwarden-ssh-agent.sock
-# rbw as ssh-agent
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/rbw/ssh-agent-socket"
+export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+echo UPDATESTARTUPTTY | gpg-connect-agent 1> /dev/null
 
 # Nvidia hardware acceleration
 # export VDPAU_DRIVER=nvidia
-#
-#
-
-# wild as clang & gcc linker for cpp/c
-export LDFLAGS="${LDFLAGS} -fuse-ld=wild"
