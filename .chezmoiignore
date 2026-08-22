@@ -3,3 +3,5 @@
 .config/zsh/*.zwc
 .config/zsh/custom/*.zwc
 .config/wezterm/background
+README.md
+LICENSE
