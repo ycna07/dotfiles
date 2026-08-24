@@ -5,18 +5,18 @@ Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+grave  {spawn-sh "kitten quick-access-terminal";}
     Mod+T hotkey-overlay-title="Open a Terminal: Kitty" { spawn "kitty"; }
     Mod+return { spawn "kitty"; }
-    Mod+semicolon hotkey-overlay-title="Run an Application" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     Mod+B {spawn "zen-browser";}
+    Mod+S {spawn "pwvucontrol";}
     Mod+D repeat=false {toggle-overview;}
-    Mod+V hotkey-overlay-title="clipboard history" {spawn-sh "qs -c noctalia-shell ipc call launcher clipboard";}
-    Mod+Alt+L hotkey-overlay-title="Lock the Screen And Suspend" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
-    Mod+M { spawn-sh "qs -c noctalia-shell ipc call wallpaper toggle"; }
+    // Mod+middle repeat=false {toggle-overview;}
+    
+
+
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
-    Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
+    // Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
 
-    Mod+A {spawn-sh "qs -c noctalia-shell ipc call bar toggle";}
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
@@ -54,6 +54,8 @@ Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Comma    { focus-column-left; }
     // Mod+J     { focus-window-down; }
     // Mod+K     { focus-window-up; }
+    Mod+H     {focus-column-left;}
+    Mod+L      {focus-column-right;}
     Mod+Period     { focus-column-right; }
 
     Mod+Ctrl+Left  { move-column-left; }
@@ -205,12 +207,12 @@ Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }
-    Mod+Shift+F{ maximize-window-to-edges; }
-    Mod+Alt+F { fullscreen-window; }
+    Mod+Ctrl+F{ maximize-window-to-edges; }
+    Mod+Shift+F { fullscreen-window; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
-    Mod+Ctrl+F { expand-column-to-available-width; }
+    // Mod+Ctrl+F { expand-column-to-available-width; }
 
     Mod+C { center-column; }
 
@@ -234,7 +236,7 @@ Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Move the focused window between the floating and the tiling layout.
     Mod+G       { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+E { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
@@ -249,9 +251,11 @@ Mod+Shift+Slash { show-hotkey-overlay; }
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { screenshot; }
+    Print { spawn "mark-shot";}
+    Ctrl+Alt+Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
+    Shift+Print {spawn-sh "niri msg pick-color";}
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here

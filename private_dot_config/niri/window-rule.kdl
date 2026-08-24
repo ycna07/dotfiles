@@ -1,5 +1,21 @@
+window-rule{
+    match is-focused=true
+    match is-floating=true
+    draw-border-with-background false
+    border {
+        off
+    }
+    focus-ring {
+        // off
+        width 1
+    }
+}
+window-rule{
+    match is-focused=false
+    draw-border-with-background false
+}
 window-rule {
-    opacity 0.92
+    opacity 1.0
     clip-to-geometry true
     // Rounded corners for a modern look.
     geometry-corner-radius 1
@@ -8,46 +24,7 @@ window-rule {
         xray false
     }
 }
-window-rule{
-    match is-focused=false
-    draw-border-with-background false
-}
-layer-rule {
-  match namespace="^noctalia-(background|launcher-overlay|dock)-.*$"
-  background-effect {
-    xray false
-  }
-}
 
-layer-rule {
-    match namespace="waybar"
-    match at-startup=true
-    opacity 0.95
-    block-out-from "screencast"
-    geometry-corner-radius 12
-    place-within-backdrop true
-}
-
-
-layer-rule{
-    match namespace="linux-wallpaperengine"
-    place-within-backdrop false
-}
-layer-rule {
-    match namespace="^launcher$"
-
-    geometry-corner-radius 12
-}
-
-// Set the overview wallpaper on the backdrop.
-layer-rule {
-  match namespace="^noctalia-overview*"
-    place-within-backdrop true
-}
-layer-rule {
-  match namespace="^noctalia-wallpaper*"
-  place-within-backdrop true
-}
 // blur {
 //   passes 3        // more passes = stronger blur (default: 3)
 //   offset 3.0      // sample distance per pass (default: 3.0)
@@ -63,9 +40,34 @@ window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
 }
+
+window-rule{
+    match app-id=r#"zen"#
+    open-maximized true
+}
 window-rule{
     match app-id=r#"neovide$"#
     opacity 0.7
+}
+window-rule{
+    match title="Gram — Settings"
+    open-floating true
+    open-focused true
+}
+window-rule{
+    match app-id="gcr-prompter"
+    // match title="rbw" "Unlock Login Keyring"
+    open-floating true
+    open-focused true
+}
+window-rule{
+    match app-id="neovide"
+    open-fullscreen true
+    open-focused true
+}
+window-rule{
+    match app-id="com.saivert.pwvucontrol"
+    open-floating true
 }
 window-rule{
     match title="linux-wallpaperengine"
@@ -80,10 +82,10 @@ window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
     default-floating-position x=10 y=10 relative-to="bottom-right"
 }
-window-rule{
-    match app-id="wpsoffice"
-    open-floating true
-}
+// window-rule{
+//     match app-id="wpsoffice"
+//     open-floating true
+// }
 
 window-rule {
     match app-id="io.github.waylyrics.Waylyrics"
@@ -97,6 +99,15 @@ window-rule {
     shadow {
         off
     }
+}
+window-rule{
+    match title="termfilechooser"
+    open-focused true
+    open-floating true
+}
+window-rule {
+    match title="Unlock Login Keyring"
+    open-focused true
 }
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)

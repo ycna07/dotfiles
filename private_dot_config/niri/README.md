@@ -1,5 +1,7 @@
-
+# Good feature
+- [] full overview
 # bugs
+## xwayland
 - [] wps right click window always show in center of screen instead of mouse around
 // use wps web to avoid
 

@@ -1,0 +1,36 @@
+// window-label
+window-rule {
+  match window-label="important" 
+  match window-label="role" with-value="nsfw"
+  opacity 0.5
+  border {
+    active-color "#ee0000"
+    inactive-color "#ee5555"
+  }
+}
+
+window-rule {
+  match window-label="role" with-value="nsfw"
+
+  block-out-from "screencast"
+}
+
+window-rule {
+    match title="Waylyrics"
+    match app-id="io.github.waylyrics.Waylyrics"
+    float-above-fullscreen true
+    open-pinned true
+}
+window-rule {
+    match is-floating=true
+    float-above-fullscreen true
+    open-pinned true
+}
+
+binds {
+  Mod+F5 { toggle-label-on-focused-window "important"; }
+  Mod+F12 { set-label-on-focused-window "role" value="nsfw"; }
+  // pin
+  Mod+P { toggle-window-pinned; }
+}
+

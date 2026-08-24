@@ -1,0 +1,60 @@
+
+// noctalia v5
+spawn-at-startup "noctalia"
+
+
+    // noctalia v5
+
+binds{
+    Mod+semicolon hotkey-overlay-title="Run an Application" { spawn-sh "noctalia msg panel-toggle launcher"; }
+
+    Mod+V hotkey-overlay-title="clipboard history" {spawn-sh "noctalia msg panel-toggle clipboard";}
+    Mod+Alt+L hotkey-overlay-title="Lock the Screen And Suspend" { spawn-sh "noctalia msg session lock"; }
+    Mod+M { spawn-sh "noctalia msg panel-toggle wallpaper"; }
+}
+
+window-rule {
+  match app-id="dev.noctalia.noctalia.settings"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
+}
+
+
+layer-rule {
+  match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|osd)$"
+  background-effect {
+    xray false
+    // blur false
+  }
+}
+
+
+// layer-rule {
+//   match namespace="noctalia-bar-default"
+// }
+
+
+
+
+
+
+
+// noctalia v4
+// spawn-at-startup "qs" "-c" "noctalia-shell"
+//
+
+// binds {
+//     Mod+semicolon hotkey-overlay-title="Run an Application" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+//     Mod+V hotkey-overlay-title="clipboard history" {spawn-sh "qs -c noctalia-shell ipc call launcher clipboard";}
+//     Mod+Alt+L hotkey-overlay-title="Lock the Screen And Suspend" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
+//     Mod+M { spawn-sh "qs -c noctalia-shell ipc call wallpaper toggle"; }
+//
+//     Mod+A {spawn-sh "qs -c noctalia-shell ipc call bar toggle";}
+// }
+// layer-rule {
+//   match namespace="^noctalia-(background|launcher-overlay|dock)-.*$"
+//   background-effect {
+//     xray false
+//   }
+// }
