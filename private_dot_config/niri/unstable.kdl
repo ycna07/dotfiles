@@ -1,7 +1,6 @@
 // window-label
 window-rule {
   match window-label="important" 
-  match window-label="role" with-value="nsfw"
   opacity 0.5
   border {
     active-color "#ee0000"
